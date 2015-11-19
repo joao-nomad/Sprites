@@ -36,25 +36,7 @@
 		<video id="vid" autoplay loop></video>
 
 		<script>
-			// 3d model setup
-			
-			var container, stats;
-			var camera, scene, renderer;
-			var plane;
-			
-			var videoInput = document.getElementById('vid');
-			var canvasInput = document.getElementById('compare');
-			
-			var projector = new THREE.Projector();
-			var objects = [];
-			
-			
-			var PI2 = Math.PI * 2;
-			function particleRender( context ) {
-        context.beginPath();
-        context.arc( 0, 0, 1, 0, PI2, true );
-        context.fill();
-      };
+	
 			
 			var placeTarget = function(x,y,z) {
         var targetObject = new THREE.Object3D();

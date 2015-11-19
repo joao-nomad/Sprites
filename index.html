@@ -172,31 +172,6 @@
 			stats.domElement.style.position = 'absolute';
 			stats.domElement.style.top = '0px';
 			document.body.appendChild( stats.domElement );
-			
-			document.addEventListener('mousedown', onDocumentMouseDown, false)    
-      
-      function onDocumentMouseDown( event ) {
-
-        event.preventDefault();
-
-        var vector = new THREE.Vector3( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1, 0.5 );
-        projector.unprojectVector( vector, camera );
-        
-        var ray = new THREE.Ray( camera.position, vector.subSelf( camera.position ).normalize() );
-        
-        var intersects = ray.intersectObjects( objects );
-         
-        if ( intersects.length > 0 ) {
-          var obj = intersects[0].object.parent;
-          objects.remove(obj.children[0]);
-          objects.remove(obj.children[1]);
-          // do something with the first object
-          scene.remove(intersects[ 0 ].object.parent);
-          // remove from objects
-          randomTarget();
-        }
-        
-      }
 		</script>
 	</body>
 </html>

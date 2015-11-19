@@ -38,13 +38,7 @@
 		<script>	
 			
 		var placeTarget = function(x,y,z) {
-        var targetObject = new THREE.Object3D();
-			
-		// video styling
-      	videoInput.style.position = 'absolute';
-      	videoInput.style.top = '50px';
-     	videoInput.style.zIndex = '100001';
-      	videoInput.style.display = 'block';
+        var targetObject = new THREE.Object3D();	
 			
 		// set up camera controller
 		headtrackr.controllers.three.realisticAbsoluteCameraControl(camera, 15, [0,0,0], new THREE.Vector3(0,0,0), {damping : 0.5});

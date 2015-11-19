@@ -35,30 +35,29 @@
 		<canvas id="compare" width="320" height="240" style="display:none"></canvas>
 		<video id="vid" autoplay loop></video>
 
-		<script>
-	
+		<script>	
 			
-			var placeTarget = function(x,y,z) {
+		var placeTarget = function(x,y,z) {
         var targetObject = new THREE.Object3D();
 			
-			// video styling
-      videoInput.style.position = 'absolute';
-      videoInput.style.top = '50px';
-      videoInput.style.zIndex = '100001';
-      videoInput.style.display = 'block';
+		// video styling
+      	videoInput.style.position = 'absolute';
+      	videoInput.style.top = '50px';
+     	videoInput.style.zIndex = '100001';
+      	videoInput.style.display = 'block';
 			
-			// set up camera controller
-			headtrackr.controllers.three.realisticAbsoluteCameraControl(camera, 15, [0,0,0], new THREE.Vector3(0,0,0), {damping : 0.5});
+		// set up camera controller
+		headtrackr.controllers.three.realisticAbsoluteCameraControl(camera, 15, [0,0,0], new THREE.Vector3(0,0,0), {damping : 0.5});
 			
-			// Face detection setup
-			var htracker = new headtrackr.Tracker({altVideo : {ogv : "./media/capture5.ogv", mp4 : "./media/capture5.mp4"}, cameraOffset : 5});
-			htracker.init(videoInput, canvasInput);
-			htracker.start();
+		// Face detection setup
+		var htracker = new headtrackr.Tracker({altVideo : {ogv : "./media/capture5.ogv", mp4 : "./media/capture5.mp4"}, cameraOffset : 5});
+		htracker.init(videoInput, canvasInput);
+		htracker.start();
 			
-			var stats = new Stats();
-			stats.domElement.style.position = 'absolute';
-			stats.domElement.style.top = '0px';
-			document.body.appendChild( stats.domElement );
+		var stats = new Stats();
+		stats.domElement.style.position = 'absolute';
+		stats.domElement.style.top = '0px';
+		document.body.appendChild( stats.domElement );
 		</script>
 	</body>
 </html>
